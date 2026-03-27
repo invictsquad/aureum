@@ -4,6 +4,8 @@
 
 Native AI infrastructure language that combines Python syntax with advanced low-level techniques for ultra-efficient inference.
 
+![Aureum](assets/aureum7.png)
+
 **Created by:** Luiz Antônio De Lima Mendonça  
 **Location:** Resende, RJ, Brazil  
 **Instagram:** [@luizinvict](https://www.instagram.com/luizinvict/)
@@ -29,6 +31,8 @@ Aureum is the first language with native resilience. It automatically adjusts pr
 
 See `GREEN_AI.md` for environmental impact and `ELASTIC_SOFTWARE.md` for native resilience.
 
+![Aureum](assets/aureum6.png)
+
 ## 🎯 Key Features
 
 ### 1. Elastic Software - Native Resilience 🆕
@@ -47,11 +51,15 @@ See `GREEN_AI.md` for environmental impact and `ELASTIC_SOFTWARE.md` for native 
 - **Carbon footprint calculator** built-in
 - Makes AI sustainable and accessible globally
 
+![Aureum](assets/aureum2.png)
+
 ### 2. Python Integration "Ghost" 🆕
 - **Use Aureum as a Python library** - no need to rewrite existing code
 - Drop-in replacement for NumPy/PyTorch heavy operations
 - 10-100x faster than pure Python for ternary weight operations
 - Seamless migration path: library → gradual adoption → native `.aur`
+
+![Aureum](assets/aureum5.png)
 
 ### 4. BitNet b1.58 (Ternary Computation)
 - Weights restricted to `{-1, 0, 1}`
@@ -64,6 +72,8 @@ See `GREEN_AI.md` for environmental impact and `ELASTIC_SOFTWARE.md` for native 
 - Syntax: `tensor[::scale]`
 - Processes only N elements, ignoring the rest
 - Instant CPU cycle savings
+
+![Aureum](assets/aureum3.png)
 
 ### 6. AI-Native Standard Library 🆕
 - Built-in AI functions: `classify()`, `detect()`, `embed()`, `summarize()`
@@ -245,6 +255,8 @@ python test_compiler.py
 - **4x smaller than INT8** ✅ (measured with real allocations)
 - **16x smaller than FP32** ✅ (measured with real allocations)
 - **Example:** 1B parameters = 250 MB (vs 1 GB in INT8)
+
+![Aureum](assets/aureum4.png)
 
 ### SIMD Optimization (IMPLEMENTED)
 - **Average speedup:** 3-4x
