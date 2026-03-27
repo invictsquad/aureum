@@ -1,0 +1,12 @@
+# Example: Basic Mathematical Operators
+# Demonstrates addition, subtraction, multiplication
+#
+# Author: Luiz Antônio De Lima Mendonça
+# Date: 2026-03-25
+
+def basic_example():
+    a = tensor(shape=[100], type=int32)
+    b = tensor(shape=[100], type=int32)
+    sum = a + b
+    difference = a - b
+    product = a * b

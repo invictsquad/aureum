@@ -1,0 +1,95 @@
+// Aureum Grammar - Lark Frontend
+// Supports: functions, bit1.58 tensors, Matryoshka operator [::scale]
+// AI-Native Standard Library: classify(), detect(), embed(), summarize(), similarity(), topk()
+// OPTIMIZED: Efficient parser with Python-style indentation
+//
+// Author: Luiz Antônio De Lima Mendonça
+// Location: Resende, RJ, Brazil
+// Instagram: @luizinvict
+// Date: 2026-03-25
+
+start: _NL* statement+
+
+?statement: func_def
+          | assignment
+
+func_def: "def" NAME "(" params? ")" ":" _NL _INDENT statement+ _DEDENT
+
+params: param ("," param)*
+param: NAME (":" type)?
+
+assignment: NAME "=" expr _NL
+
+expr: expr "+" term   -> add
+    | expr "-" term   -> sub
+    | term
+
+term: term "*" factor -> mul
+    | term "/" factor -> div
+    | term "%" factor -> mod
+    | term "**" factor -> pow
+    | factor
+
+factor: tensor_expr
+      | stdlib_call
+      | slice_expr
+      | NAME
+      | NUMBER
+      | "(" expr ")"
+
+// ─── AI-Native Standard Library ───────────────────────────────────────────
+// Funções nativas otimizadas para kernel BitNet b1.58
+// Zero dependências externas — embutidas no núcleo da linguagem
+
+stdlib_call: classify_call
+           | detect_call
+           | embed_call
+           | summarize_call
+           | similarity_call
+           | topk_call
+
+// classify(input, weights[::scale]) → ClassifyResult
+classify_call: "classify" "(" NAME "," slice_expr ")"
+
+// detect(sequence, pattern[::scale]) → DetectResult
+detect_call: "detect" "(" NAME "," slice_expr ")"
+
+// embed(input, projection[::scale]) → Vec<i64>
+embed_call: "embed" "(" NAME "," slice_expr ")"
+
+// summarize(tokens, attention[::scale]) → Vec<i64>
+summarize_call: "summarize" "(" NAME "," slice_expr ")"
+
+// similarity(vec_a, vec_b) → SimilarityResult
+similarity_call: "similarity" "(" NAME "," NAME ")"
+
+// topk(scores, k) → Vec<usize>
+topk_call: "topk" "(" NAME "," NUMBER ")"
+
+// ─── Tensores ─────────────────────────────────────────────────────────────
+
+// tensor(shape=[...], type=type)
+// Supports 1D, 2D, 3D and N-D
+tensor_expr: "tensor" "(" "shape" "=" "[" shape_dims "]" "," "type" "=" type ")"
+
+shape_dims: NUMBER ("," NUMBER)*
+
+// Matryoshka operator: name[::scale]
+slice_expr: NAME "[" "::" NUMBER "]"
+
+type: "bit1.58"  -> type_bit158
+    | "int16"    -> type_int16
+    | "int32"    -> type_int32
+    | "float32"  -> type_float32
+
+// Python-style indentation
+_NL: /(\r?\n[\t ]*)+/
+_INDENT: "<INDENT>"
+_DEDENT: "<DEDENT>"
+
+%import common.CNAME -> NAME
+%import common.NUMBER
+%import common.WS_INLINE
+
+%ignore WS_INLINE
+%ignore /#[^\n]*/

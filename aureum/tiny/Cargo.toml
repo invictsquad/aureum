@@ -1,0 +1,24 @@
+[package]
+name = "aureum_tiny"
+version = "0.1.0"
+edition = "2021"
+authors = ["Luiz Antônio De Lima Mendonça <luizinvict@example.com>"]
+description = "Aureum Tiny Runtime - AI inference on $1 chips"
+license = "MIT"
+
+[lib]
+crate-type = ["staticlib", "cdylib"]
+
+[dependencies]
+# Zero dependências! Runtime completamente standalone
+
+[profile.release]
+opt-level = "z"        # Otimiza para tamanho
+lto = true             # Link-time optimization
+codegen-units = 1      # Melhor otimização
+panic = "abort"        # Sem unwinding
+strip = true           # Remove símbolos
+
+[profile.release-tiny]
+inherits = "release"
+opt-level = "z"

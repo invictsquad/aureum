@@ -1,0 +1,134 @@
+# Aureum AI-Native Standard Library — Sintaxe Nativa
+# Demonstra como usar classify(), detect(), embed() e similarity()
+# diretamente na linguagem Aureum, sem instalar nada.
+#
+# Autor: Luiz Antônio De Lima Mendonça
+# Localização: Resende, RJ, Brasil
+# Instagram: @luizinvict
+# Data: 2026-03-25
+
+# ─── Exemplo 1: Classificação em 5 linhas ────────────────────────────────────
+
+def classificar_texto():
+    # Entrada: embedding do texto (int16, 512 dimensões)
+    entrada = tensor(shape=[512], type=int16)
+
+    # Pesos do classificador (4 classes × 512 dimensões, bit1.58)
+    pesos_clf = tensor(shape=[4, 512], type=bit1.58)
+
+    # classify() nativa — zero multiplicações FP
+    resultado = classify(entrada, pesos_clf[::256])
+
+    # Top-3 classes mais prováveis
+    top3 = topk(resultado, 3)
+
+# ─── Exemplo 2: Detecção de anomalia ─────────────────────────────────────────
+
+def detectar_anomalia():
+    # Série temporal de sensores (1000 amostras)
+    serie = tensor(shape=[1000], type=int16)
+
+    # Padrão de anomalia (pesos ternários, 10 amostras)
+    padrao = tensor(shape=[10], type=bit1.58)
+
+    # detect() com sliding window BitNet
+    anomalia = detect(serie, padrao[::10])
+
+# ─── Exemplo 3: Busca semântica ───────────────────────────────────────────────
+
+def busca_semantica():
+    # Query e documentos (embeddings de 256 dimensões)
+    query = tensor(shape=[256], type=int16)
+    doc_a = tensor(shape=[256], type=int16)
+    doc_b = tensor(shape=[256], type=int16)
+
+    # Matriz de projeção para embeddings compactos (64 dims)
+    proj = tensor(shape=[64, 256], type=bit1.58)
+
+    # embed() — projeta para espaço compacto
+    emb_query = embed(query, proj[::128])
+    emb_a = embed(doc_a, proj[::128])
+    emb_b = embed(doc_b, proj[::128])
+
+    # similarity() — dot product inteiro, sem FP
+    sim_a = similarity(emb_query, emb_a)
+    sim_b = similarity(emb_query, emb_b)
+
+# ─── Exemplo 4: Sumarização de documento ─────────────────────────────────────
+
+def sumarizar_documento():
+    # Documento: 128 tokens, cada um com 256 dimensões
+    tokens = tensor(shape=[128, 256], type=int16)
+
+    # Pesos de atenção ternários (128 tokens)
+    atencao = tensor(shape=[128], type=bit1.58)
+
+    # summarize() — atenção ternária, zero multiplicações
+    resumo = summarize(tokens, atencao[::64])
+
+# ─── Exemplo 5: Pipeline completo de NLP ─────────────────────────────────────
+
+def pipeline_nlp():
+    # Modelo de linguagem compacto
+    vocab = tensor(shape=[50000, 512], type=int16)
+    clf_weights = tensor(shape=[10, 512], type=bit1.58)
+    emb_weights = tensor(shape=[128, 512], type=bit1.58)
+    attn_weights = tensor(shape=[512], type=bit1.58)
+
+    # Entrada: sequência de token IDs
+    tokens = tensor(shape=[512], type=int16)
+
+    # 1. Embedding dos tokens
+    representacao = embed(tokens, emb_weights[::256])
+
+    # 2. Classificação de sentimento
+    sentimento = classify(tokens, clf_weights[::256])
+
+    # 3. Sumarização
+    resumo = summarize(vocab, attn_weights[::256])
+
+    # 4. Top-5 classes
+    top5 = topk(sentimento, 5)
+
+# ─── Exemplo 6: Detecção de objetos (visão) ──────────────────────────────────
+
+def detectar_objetos():
+    # Frame de vídeo (224×224 pixels, 3 canais → 150528 valores)
+    frame = tensor(shape=[150528], type=int16)
+
+    # Filtros convolucionais BitNet (64 filtros × 49 pixels = 3136 pesos)
+    filtros = tensor(shape=[3136], type=bit1.58)
+
+    # detect() com janela deslizante
+    objeto = detect(frame, filtros[::1024])
+
+    # Classificação do objeto detectado
+    classes_obj = tensor(shape=[80, 512], type=bit1.58)
+    entrada_clf = tensor(shape=[512], type=int16)
+    classe = classify(entrada_clf, classes_obj[::256])
+
+# ─── Exemplo 7: Recomendação ──────────────────────────────────────────────────
+
+def recomendar():
+    # Perfil do usuário (512 dimensões)
+    perfil_usuario = tensor(shape=[512], type=int16)
+
+    # Catálogo de produtos (10000 itens × 512 dimensões)
+    catalogo = tensor(shape=[10000, 512], type=int16)
+
+    # Pesos de projeção para espaço compacto
+    proj = tensor(shape=[128, 512], type=bit1.58)
+
+    # Embedding do usuário
+    emb_usuario = embed(perfil_usuario, proj[::256])
+
+    # Embedding de um produto
+    produto = tensor(shape=[512], type=int16)
+    emb_produto = embed(produto, proj[::256])
+
+    # Similaridade usuário-produto
+    score = similarity(emb_usuario, emb_produto)
+
+    # Top-10 recomendações
+    scores_todos = tensor(shape=[10000], type=int32)
+    top10 = topk(scores_todos, 10)

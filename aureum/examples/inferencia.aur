@@ -1,0 +1,4 @@
+def inferencia():
+    entrada = tensor(shape=[1024], type=int16)
+    pesos = tensor(shape=[1024], type=bit1.58)
+    resultado = entrada * pesos[::512]

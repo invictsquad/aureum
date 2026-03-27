@@ -1,0 +1,8 @@
+def modelo_avancado():
+    entrada_pequena = tensor(shape=[512], type=int16)
+    entrada_media = tensor(shape=[1024], type=int16)
+    entrada_grande = tensor(shape=[2048], type=int16)
+    pesos_modelo = tensor(shape=[2048], type=bit1.58)
+    resultado_rapido = entrada_pequena * pesos_modelo[::512]
+    resultado_balanceado = entrada_media * pesos_modelo[::1024]
+    resultado_preciso = entrada_grande * pesos_modelo[::2048]

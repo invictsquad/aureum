@@ -1,0 +1,50 @@
+MIT License
+
+Copyright (c) 2026 Luiz Antônio De Lima Mendonça
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+AUTHOR INFORMATION
+
+Name: Luiz Antônio De Lima Mendonça
+Location: Resende, Rio de Janeiro, Brazil
+Birth Date: July 31, 1998 (27 years old)
+Instagram: @luizinvict
+Website: https://www.instagram.com/luizinvict/
+
+PROJECT INFORMATION
+
+Project Name: Aureum Programming Language
+Version: 0.1.0 (MVP)
+Release Date: March 25, 2026
+Description: AI-native programming language combining Python syntax with 
+             Rust performance, implementing BitNet b1.58 and Matryoshka 
+             optimization techniques.
+
+TECHNICAL ACHIEVEMENTS
+
+- BitNet b1.58: Ternary computation with 2-bit weight compression
+- Matryoshka Operator: Adaptive scale processing
+- Performance: 10-20x faster than traditional FP32
+- Memory: 16x reduction compared to FP32
+- Architecture: Hybrid Python (frontend) + Rust (backend)
+
+Created with 💛 in Resende, RJ, Brazil
