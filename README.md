@@ -38,6 +38,8 @@ See `GREEN_AI.md` for environmental impact and `ELASTIC_SOFTWARE.md` for native 
 - **100% uptime** even under extreme load
 - First language in the world with native elasticity
 
+![Aureum](assets/aureum1.png)
+
 ### 2. Green AI - Hardware Inverso 🆕
 - **99% less energy** than PyTorch FP32
 - **16x smaller models** (2-bit vs FP32)
