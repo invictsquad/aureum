@@ -1,0 +1,65 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    QUICK TEST OF AUREUM REPL
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: INSTALL DEPENDENCIES
+───────────────────────────────
+
+pip install lark psutil numpy
+
+STEP 2: COMPILE RUST KERNEL
+──────────────────────────────
+
+cd backend
+cargo build --release
+cd ..
+
+STEP 3: TEST REPL
+────────────────────
+
+python test_repl.py
+
+Expected output:
+  ✅ Rust kernel loaded via FFI
+  ✅ All tests passed
+
+STEP 4: START REPL
+─────────────────────
+
+python main.py --shell
+
+STEP 5: TEST IN REPL
+───────────────────────
+
+Type the following commands:
+
+>>> input = tensor(shape=[1024], type=int16)
+>>> weights = tensor(shape=[1024], type=bit1.58)
+>>> result = input * weights[::512]
+>>> .scale 256
+>>> r2 = input * weights
+>>> .vars
+>>> .memory
+>>> .exit
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+
+Error: "Rust kernel not available"
+→ Solution: cd backend && cargo build --release
+
+Error: "Cargo not found"
+→ Solution: Install Rust at https://rustup.rs/
+
+Error: "ModuleNotFoundError: No module named 'psutil'"
+→ Solution: pip install psutil
+
+Error: "ModuleNotFoundError: No module named 'lark'"
+→ Solution: pip install lark
+
+═══════════════════════════════════════════════════════════════════════════════
+
+READY! The REPL is working! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════

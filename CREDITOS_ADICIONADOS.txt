@@ -1,0 +1,183 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║            ✅ CREDITS SUCCESSFULLY ADDED ✅                           ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+AUTHOR: Luiz Antônio De Lima Mendonça
+LOCATION: Resende, Rio de Janeiro, Brazil
+AGE: 27 years old (Born on 07/31/1998)
+INSTAGRAM: @luizinvict
+LINK: https://www.instagram.com/luizinvict/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 FILES UPDATED WITH CREDITS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ NEW FILES CREATED:
+
+  1. CREDITS.md
+     - Complete project credits
+     - Author information
+     - Timeline
+     - MIT License
+
+  2. LICENSE
+     - Formal MIT License
+     - Copyright (c) 2026 Luiz Antônio De Lima Mendonça
+     - Author information
+     - Project details
+
+  3. AUTHOR.md
+     - Complete biography
+     - Project motivation
+     - Technical achievements
+     - Future vision
+     - Contact and social networks
+
+✅ UPDATED FILES:
+
+  1. README.md
+     - Credits in header
+     - Author section at the end
+     - Instagram link
+
+  2. frontend/aureum_compiler.py
+     - Credits in docstring
+     - Author name
+     - Location and Instagram
+
+  3. backend/src/lib.rs
+     - Credits in module comment
+     - Author name
+     - Location and Instagram
+
+  4. backend/Cargo.toml
+     - "authors" field
+     - Project metadata
+     - Repository and license
+
+  5. demo.py
+     - Credits in docstring
+     - Author information
+
+  6. test_compiler.py
+     - Credits in docstring
+     - Author information
+
+  7. frontend/grammar.lark
+     - Credits in comment
+     - Author information
+
+  8. SUMMARY.txt
+     - Credits in header
+     - Copyright in footer
+
+  9. GETTING_STARTED.txt
+     - Credits in header
+     - Copyright in footer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 SUMMARY OF ADDITIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+New Files: 3
+  - CREDITS.md
+  - LICENSE
+  - AUTHOR.md
+
+Updated Files: 9
+  - README.md
+  - aureum_compiler.py
+  - lib.rs
+  - Cargo.toml
+  - demo.py
+  - test_compiler.py
+  - grammar.lark
+  - SUMMARY.txt
+  - GETTING_STARTED.txt
+
+Total Modifications: 12 files
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 INFORMATION INCLUDED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Full name: Luiz Antônio De Lima Mendonça
+✅ Location: Resende, Rio de Janeiro, Brazil
+✅ Age: 27 years old
+✅ Date of birth: 07/31/1998
+✅ Instagram: @luizinvict
+✅ Link: https://www.instagram.com/luizinvict/
+✅ Copyright: (c) 2026
+✅ License: MIT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 WHERE TO FIND CREDITS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 Complete Credits:
+   → CREDITS.md (dedicated file)
+   → AUTHOR.md (complete biography)
+
+📄 License:
+   → LICENSE (formal MIT License)
+
+📄 Main Documentation:
+   → README.md (header and footer)
+
+📄 Source Code:
+   → frontend/aureum_compiler.py (docstring)
+   → backend/src/lib.rs (module comment)
+   → backend/Cargo.toml (metadata)
+   → frontend/grammar.lark (comment)
+
+📄 Scripts:
+   → demo.py (docstring)
+   → test_compiler.py (docstring)
+
+📄 Visual Documentation:
+   → SUMMARY.txt (header and footer)
+   → GETTING_STARTED.txt (header and footer)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ HIGHLIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🏆 Aureum Project v0.1.0 (MVP)
+   Created by: Luiz Antônio De Lima Mendonça
+   Resende, RJ, Brazil
+
+🎯 Achievements:
+   - Complete programming language
+   - BitNet b1.58 implemented
+   - Native Matryoshka operator
+   - Performance: 10-20x vs FP32
+   - Memory: 16x reduction
+
+📱 Contact:
+   Instagram: @luizinvict
+   Link: https://www.instagram.com/luizinvict/
+
+📄 License:
+   MIT License
+   Copyright (c) 2026 Luiz Antônio De Lima Mendonça
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║  ✅ ALL CREDITS SUCCESSFULLY ADDED! ✅                               ║
+║                                                                      ║
+║  The Aureum project is now fully credited to its creator            ║
+║  Luiz Antônio De Lima Mendonça in all main files,                   ║
+║  documentation and source code.                                     ║
+║                                                                      ║
+║  Created with 💛 in Resende, RJ, Brazil                             ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝

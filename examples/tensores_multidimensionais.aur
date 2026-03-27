@@ -1,0 +1,117 @@
+# Example: Multidimensional Tensors (2D, 3D, N-D)
+# Demonstrates use of tensors with multiple dimensions
+#
+# Author: Luiz Antônio De Lima Mendonça
+# Location: Resende, RJ, Brazil
+# Instagram: @luizinvict
+# Date: 2026-03-25
+
+def example_2d_tensors():
+    # 2D tensor: 32x64 matrix
+    matrix = tensor(shape=[32, 64], type=float32)
+    
+    # 2D BitNet weights for convolutional layer
+    filter = tensor(shape=[3, 3], type=bit1.58)
+    
+    # 2D tensor for embeddings
+    embeddings = tensor(shape=[10000, 512], type=int16)
+
+def example_3d_tensors():
+    # 3D tensor: batch of images (batch, height, width)
+    images = tensor(shape=[32, 224, 224], type=int16)
+    
+    # 3D tensor for video (frames, height, width)
+    video = tensor(shape=[60, 1920, 1080], type=int16)
+    
+    # 3D weights for convolutional network
+    conv_weights = tensor(shape=[64, 3, 3], type=bit1.58)
+
+def example_4d_tensors():
+    # 4D tensor: batch of RGB images (batch, channels, height, width)
+    batch_rgb = tensor(shape=[16, 3, 256, 256], type=int16)
+    
+    # 4D weights for deep convolutional layer
+    deep_conv = tensor(shape=[128, 64, 3, 3], type=bit1.58)
+
+def example_deep_neural_network():
+    # Layer 1: Input
+    input = tensor(shape=[1024], type=int16)
+    weights1 = tensor(shape=[1024, 2048], type=bit1.58)
+    
+    # Layer 2: Hidden
+    weights2 = tensor(shape=[2048, 4096], type=bit1.58)
+    
+    # Layer 3: Output
+    weights3 = tensor(shape=[4096, 1000], type=bit1.58)
+    
+    # Inference with adaptive Matryoshka
+    # Scale 512: fast mode (low latency)
+    output_fast = input * weights1[::512]
+    
+    # Scale 1024: balanced mode
+    output_balanced = input * weights1[::1024]
+    
+    # Full scale: maximum precision
+    output_precise = input * weights1[::1024]
+
+def example_memory_savings():
+    # Memory usage comparison
+    
+    # Traditional FP32 model: 1B parameters
+    # 1,000,000,000 × 4 bytes = 4 GB
+    model_fp32 = tensor(shape=[1000000000], type=float32)
+    
+    # BitNet b1.58 model: 1B parameters
+    # 1,000,000,000 × 0.25 bytes = 250 MB (16x smaller!)
+    model_bitnet = tensor(shape=[1000000000], type=bit1.58)
+    
+    # Savings: 4 GB - 250 MB = 3.75 GB saved! ⚡
+
+def example_transformer():
+    # Transformer with BitNet b1.58
+    
+    # Typical parameters for a GPT-like model
+    vocab_size = 50000
+    hidden_dim = 4096
+    num_layers = 32
+    
+    # Input embeddings
+    token_embeddings = tensor(shape=[vocab_size, hidden_dim], type=int16)
+    
+    # Attention weights (Q, K, V) per layer
+    attention_q = tensor(shape=[num_layers, hidden_dim, hidden_dim], type=bit1.58)
+    attention_k = tensor(shape=[num_layers, hidden_dim, hidden_dim], type=bit1.58)
+    attention_v = tensor(shape=[num_layers, hidden_dim, hidden_dim], type=bit1.58)
+    
+    # Feed-forward per layer
+    ff_w1 = tensor(shape=[num_layers, hidden_dim, hidden_dim * 4], type=bit1.58)
+    ff_w2 = tensor(shape=[num_layers, hidden_dim * 4, hidden_dim], type=bit1.58)
+    
+    # Output head
+    output_head = tensor(shape=[hidden_dim, vocab_size], type=bit1.58)
+    
+    # Total BitNet parameters: ~1.5B
+    # Memory: ~375 MB (vs ~6 GB in FP32) ⚡
+
+def example_vision_cnn():
+    # CNN for image classification
+    
+    # Input: batch of 32 224x224 RGB images
+    input_images = tensor(shape=[32, 3, 224, 224], type=int16)
+    
+    # Conv1: 64 7x7 filters
+    conv1_weights = tensor(shape=[64, 3, 7, 7], type=bit1.58)
+    
+    # Conv2: 128 3x3 filters
+    conv2_weights = tensor(shape=[128, 64, 3, 3], type=bit1.58)
+    
+    # Conv3: 256 3x3 filters
+    conv3_weights = tensor(shape=[256, 128, 3, 3], type=bit1.58)
+    
+    # Conv4: 512 3x3 filters
+    conv4_weights = tensor(shape=[512, 256, 3, 3], type=bit1.58)
+    
+    # Fully connected layer
+    fc_weights = tensor(shape=[512 * 7 * 7, 1000], type=bit1.58)
+    
+    # Memory savings vs FP32: ~75% ⚡

@@ -1,0 +1,27 @@
+# Example: Advanced Mathematical Operators
+# Demonstrates division, modulo and power in Aureum
+#
+# Author: Luiz Antônio De Lima Mendonça
+# Location: Resende, RJ, Brazil
+# Instagram: @luizinvict
+# Date: 2026-03-25
+
+def example_operators():
+    # Tensor declaration
+    values = tensor(shape=[8], type=int32)
+    divisor = tensor(shape=[8], type=int32)
+    
+    # Mathematical operations
+    result_div = values / divisor
+    result_mod = values % divisor
+    result_pow = values ** 2
+    
+    # Operator combination
+    complex = (values + 10) * 2 / divisor
+    
+    # Example with BitNet
+    input = tensor(shape=[1024], type=int16)
+    weights = tensor(shape=[1024], type=bit1.58)
+    
+    # Inference with Matryoshka
+    output = input * weights[::512]

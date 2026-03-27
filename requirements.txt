@@ -1,0 +1,11 @@
+# Aureum - Python Dependencies
+# Author: Luiz Antônio De Lima Mendonça
+
+# Parser
+lark>=1.1.0
+
+# Monitoramento de memória (para REPL)
+psutil>=5.9.0
+
+# Computação numérica (para demos)
+numpy>=1.24.0

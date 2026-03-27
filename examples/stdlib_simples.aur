@@ -1,0 +1,29 @@
+# Aureum AI-Native Standard Library — Exemplo Simples
+# Demonstra classify(), detect(), embed(), similarity() e topk()
+#
+# Autor: Luiz Antônio De Lima Mendonça
+# Data: 2026-03-25
+
+def classificar():
+    entrada = tensor(shape=[512], type=int16)
+    pesos = tensor(shape=[512], type=bit1.58)
+    resultado = classify(entrada, pesos[::256])
+
+def detectar():
+    serie = tensor(shape=[1000], type=int16)
+    padrao = tensor(shape=[10], type=bit1.58)
+    anomalia = detect(serie, padrao[::10])
+
+def gerar_embedding():
+    tokens = tensor(shape=[512], type=int16)
+    proj = tensor(shape=[512], type=bit1.58)
+    emb = embed(tokens, proj[::256])
+
+def busca_semantica():
+    query = tensor(shape=[256], type=int16)
+    doc = tensor(shape=[256], type=int16)
+    sim = similarity(query, doc)
+
+def top_classes():
+    scores = tensor(shape=[100], type=int32)
+    top5 = topk(scores, 5)

@@ -1,0 +1,68 @@
+[package]
+name = "aureum_kernel"
+version = "0.1.0"
+edition = "2021"
+authors = ["Luiz Antônio De Lima Mendonça <@luizinvict>"]
+description = "Aureum BitNet b1.58 kernel - Ultra-efficient AI inference with 2-bit weights"
+license = "MIT"
+repository = "https://github.com/luizinvict/aureum"
+
+[lib]
+crate-type = ["cdylib", "rlib", "staticlib"]
+name = "aureum_kernel"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[profile.release-wasm]
+inherits = "release"
+opt-level = "z"  # Optimize for size (critical for WASM)
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+# ─── Cross-Platform Targets ───────────────────────────────────────────────────
+# 
+# Aureum Everywhere: Compile for any platform
+#
+# Supported targets:
+#   - x86_64-unknown-linux-gnu      (Linux desktop/server)
+#   - x86_64-pc-windows-msvc        (Windows)
+#   - x86_64-apple-darwin           (macOS Intel)
+#   - aarch64-apple-darwin          (macOS Apple Silicon)
+#   - aarch64-unknown-linux-gnu     (Linux ARM64 - Raspberry Pi, servers)
+#   - armv7-unknown-linux-gnueabihf (Linux ARM32 - cheap phones, IoT)
+#   - riscv64gc-unknown-linux-gnu   (RISC-V 64-bit - future open hardware)
+#   - wasm32-unknown-unknown        (WebAssembly - browser)
+#   - wasm32-wasi                   (WebAssembly System Interface)
+#
+# Build commands:
+#   cargo build --release --target <target>
+#
+# Examples:
+#   cargo build --release --target aarch64-unknown-linux-gnu
+#   cargo build --release --target wasm32-unknown-unknown
+#   cargo build --release --target riscv64gc-unknown-linux-gnu
+
+[target.wasm32-unknown-unknown]
+# WebAssembly-specific settings
+# No threading, no std filesystem
+
+[target.wasm32-wasi]
+# WASI (WebAssembly System Interface) - has filesystem access
+
+[target.aarch64-unknown-linux-gnu]
+# ARM64 Linux - uses NEON SIMD
+
+[target.armv7-unknown-linux-gnueabihf]
+# ARM32 Linux - uses NEON SIMD (if available)
+
+[target.riscv64gc-unknown-linux-gnu]
+# RISC-V 64-bit - uses RVV (RISC-V Vector Extension) when available

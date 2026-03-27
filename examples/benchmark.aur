@@ -1,0 +1,6 @@
+def benchmark_matryoshka():
+    entrada = tensor(shape=[2048], type=int16)
+    pesos = tensor(shape=[2048], type=bit1.58)
+    resultado_25 = entrada * pesos[::512]
+    resultado_50 = entrada * pesos[::1024]
+    resultado_100 = entrada * pesos[::2048]
